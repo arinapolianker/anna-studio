@@ -25,28 +25,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-// export default function Footer() {
-//   return (
-//     <div className="bottom">
-//         <div className="bottom-left">
-//             יצירת קשר
-//             <span>+972 52-4817225</span> 
-//         </div>
-//         <div className="bottom-right">
-//             להזמנות בוואטצאפ
-//             <a href="https://wa.me/972524817225" target="_blank" rel="noopener noreferrer">
-//                 <i className="fab fa-whatsapp"></i> WhatsApp
-//             </a>
-//         </div>
-//       <div>
-//         <a
-//           href="https://www.facebook.com/annannas76"
-//           target="_blank"
-//           title="Facebook"
-//           ><i class="fab fa-facebook-square"></i
-//         ></a>
-//       </div>
-//     </div>
-//   );
-// }

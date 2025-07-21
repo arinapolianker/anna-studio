@@ -3,20 +3,6 @@ import "./App.css";
 import Head from "./Head";
 import Gallery from "./Gallery";
 
-// export default function Works() {
-//     return (
-//         <div>
-//             <Head />
-//             <div className="head">
-//                 <h1>קערות</h1>
-//             </div>
-//             <div className="home-photo">
-//             <Gallery category="bowls" />
-//             </div>
-//             {/* <Footer /> */}
-//         </div>
-//     );
-// }
 export default function Works() {
   const [category, setCategory] = useState("bowls");
 

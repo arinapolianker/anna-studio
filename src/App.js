@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Head from "./Head";
@@ -54,7 +54,7 @@ function App() {
     };
   };
 
-  const onMouseMove = (e) => {
+  const onMouseMove = useCallback((e) => {
     if (dragging) {
       setDragged(true);
       const { width, height } = getWindowSize();
@@ -63,14 +63,14 @@ function App() {
       const y = clamp(e.clientY - offset.current.y, HEAD_HEIGHT, height - btnSize);
       setPos(snapToEdge(x, y));
     }
-  };
+  }, [dragging, getWindowSize, clamp, HEAD_HEIGHT, snapToEdge]);
 
-  const onMouseUp = (e) => {
-    setDragging(false);
+  const onMouseUp = useCallback((e) => {
+  setDragging(false);
     if (dragged) {
       setPos(snapToEdge(pos.x, pos.y));
     }
-  };
+  }, [dragged, pos.x, pos.y, snapToEdge]);
 
   const onTouchStart = (e) => {
     setDragging(true);
@@ -81,7 +81,7 @@ function App() {
     };
   };
   
-  const onTouchMove = (e) => {
+  const onTouchMove = useCallback((e) => {
     if (dragging) {
       setDragged(true);
       const { width, height } = getWindowSize();
@@ -90,14 +90,14 @@ function App() {
       const y = clamp(e.touches[0].clientY - offset.current.y, HEAD_HEIGHT, height - btnSize);
       setPos(snapToEdge(x, y));
     }
-  };
-  
-  const onTouchEnd = () => {
-    setDragging(false);
+  }, [dragging, getWindowSize, clamp, HEAD_HEIGHT, snapToEdge]);
+
+const onTouchEnd = useCallback(() => {
+  setDragging(false);
     if (dragged) {
       setPos(snapToEdge(pos.x, pos.y));
     }
-  };
+  }, [dragged, pos.x, pos.y, snapToEdge]);
 
   const handleClick = () => {
     if (!dragged) {

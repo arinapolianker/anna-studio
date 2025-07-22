@@ -21,7 +21,7 @@ function App() {
     height: window.innerHeight,
   }), []);
 
-  const clamp = (value, min, max) => Math.max(min, Math.min(value, max));
+  const clamp = useCallback((value, min, max) => Math.max(min, Math.min(value, max)), []);
 
   const snapToEdge = useCallback((x, y) => {
     const { width, height } = getWindowSize();

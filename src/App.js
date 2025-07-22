@@ -13,18 +13,18 @@ function App() {
   const [dragged, setDragged] = useState(false); 
   const offset = useRef({ x: 0, y: 0 });
 
-  const getWindowSize = () => ({
+  const HEAD_HEIGHT = 80; 
+  const btnSize = 48;
+
+  const getWindowSize = useCallback(() => ({
     width: window.innerWidth,
     height: window.innerHeight,
-  });
-
-  const HEAD_HEIGHT = 80; 
+  }), []);
 
   const clamp = (value, min, max) => Math.max(min, Math.min(value, max));
 
-  const snapToEdge = (x, y) => {
+  const snapToEdge = useCallback((x, y) => {
     const { width, height } = getWindowSize();
-    const btnSize = 48;
     const edges = [
       { x: 0, y: clamp(y, HEAD_HEIGHT, height - btnSize) }, 
       { x: width - btnSize, y: clamp(y, HEAD_HEIGHT, height - btnSize) }, 
@@ -43,7 +43,7 @@ function App() {
       x: clamp(snapped.x, 0, width - btnSize),
       y: clamp(snapped.y, HEAD_HEIGHT, height - btnSize),
     };
-  };
+  }, [getWindowSize, clamp, HEAD_HEIGHT, btnSize]);
 
   const onMouseDown = (e) => {
     setDragging(true);

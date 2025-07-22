@@ -14,7 +14,7 @@ body {
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.7); /* Default color */
+  color: rgba(255, 255, 255, 0.7); 
   transition: color 0.2s;
 }
 
@@ -25,7 +25,14 @@ body {
 .nav-link.active {
   color: #ffffff; 
   font-weight: bold;
-  border-bottom: 1px solid white; 
+}
+
+.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+.high-contrast img {
+  filter: grayscale(1) contrast(2);
 }
 
 .content-wrapper {
@@ -37,8 +44,25 @@ body {
 .home-photo {
   padding: 40px;
   margin: 25px 80px;
-  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
+
+.home-photo img{
+  max-width: 100%;
+  height: auto;
+  flex: 1 1 200px; 
+}
+
+@media (max-width: 600px) {
+  .home-photo {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 .gallery img {
   max-width: 250px;

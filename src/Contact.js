@@ -8,7 +8,7 @@ export default function Contact() {
       <Head />
       <div className="contact-header">
         <h1>צור קשר</h1>
-        <p className="phone"><strong>טלפון:</strong> 052-6849426</p>
+        <p className="phone"><strong>טלפון:</strong> 052-4817225</p>
         <div className="social-icons">
           <a href="https://www.facebook.com/annannas76" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-square"></i>

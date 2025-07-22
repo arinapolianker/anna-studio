@@ -123,7 +123,7 @@ function App() {
       window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchend", onTouchEnd);
     };
-  }, [dragging]);
+  }, [dragging, onMouseMove, onMouseUp, onTouchMove, onTouchEnd]);
 
   return (
     <Router>

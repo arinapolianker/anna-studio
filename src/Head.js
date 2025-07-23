@@ -1,9 +1,18 @@
+import { NavLink, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import "./App.css";
 import logo from "./photos/anna_studio_logo.png";
 
-import { NavLink } from "react-router-dom";
-
 export default function Head() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const navbar = document.getElementById("navbarNav");
+    if (navbar && navbar.classList.contains("show")) {
+      navbar.classList.remove("show");
+    }
+  }, [location]);
+
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bd-navbar fixed-top">
       <div className="container-fluid">

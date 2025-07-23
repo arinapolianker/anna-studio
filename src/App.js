@@ -1,5 +1,7 @@
 import React, { useState, useRef, useCallback } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import "./App.css";
 import Head from "./Head";
 import Footer from "./Footer";
@@ -8,6 +10,12 @@ import Works from "./Works";
 import Contact from "./Contact";
 
 function App() {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    document.body.classList.remove("high-contrast");
+  }, [location]);
+
   const [pos, setPos] = useState({ x: 0, y: 100 });
   const [dragging, setDragging] = useState(false);
   const [dragged, setDragged] = useState(false); 
@@ -126,7 +134,7 @@ const onTouchEnd = useCallback(() => {
   }, [dragging, onMouseMove, onMouseUp, onTouchMove, onTouchEnd]);
 
   return (
-    <Router>
+    <>
       <button
         aria-label="Toggle high contrast"
         onClick={handleClick}
@@ -159,7 +167,7 @@ const onTouchEnd = useCallback(() => {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </>
   );
 }
 

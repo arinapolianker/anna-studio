@@ -7,7 +7,7 @@ export default function Home() {
         <div>
             <Head />
             <div className="page-head">
-                <h1>עבודות</h1>
+                <h1>דוגמאות</h1>
             </div>
             <div className="home-photo">
             <Gallery category="home" />

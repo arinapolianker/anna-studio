@@ -5,14 +5,14 @@ export default function Gallery({ category }) {
   const images = photos[category] || [];
 
   return (
-    <div className="gallery">
+    <div className="container">
       {images.map((img, index) => (
-        <img
-          key={index}
-          src={img}
-          alt={`${category}-${index}`}
-          className="gallery-image"
-        />
+            <img
+              key={index}
+              src={img}
+              alt={`${category}-${index}`}
+              className="gallery-image"
+            />
       ))}
     </div>
   );

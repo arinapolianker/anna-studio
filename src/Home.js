@@ -9,8 +9,8 @@ export default function Home() {
             <div className="page-head">
                 <h1>דוגמאות</h1>
             </div>
-            <div className="home-photo">
-            <Gallery category="home" />
+            <div className="photos-container">
+                <Gallery category="home" />
             </div>
         </div>
     );

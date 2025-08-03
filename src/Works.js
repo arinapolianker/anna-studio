@@ -10,6 +10,8 @@ export default function Works() {
     { label: "קערות", value: "bowls" },
     { label: "אגרטלים", value: "vases" },
     { label: "כוסות", value: "cups" },
+    { label: "צלחות", value: "plates" },
+    { label: "כדים", value: "jugs" },
   ];
 
   return (
@@ -29,7 +31,7 @@ export default function Works() {
           ))}
         </div>
       </div>
-      <div className="home-photo">
+      <div className="photos-container">
         <Gallery category={category} />
       </div>
     </div>
